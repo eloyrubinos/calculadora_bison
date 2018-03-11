@@ -1,0 +1,46 @@
+Práctica 3
+
+Construir una herramienta que permita compilar y ejecutar ficheros con secuencias de expresiones de cálculo matemático.
+
+Orientación
+
+Se pide una herramienta que pueda interpretar y ejecutar ficheros con expresiones de la forma:
+
+x = 3;
+
+y = 2 * pi * x;
+
+z = x * sin (y + pi/6);
+
+Como resultado de la ejecución se presentarán los valores que toman las distintas variables que aparecen en el fichero. Se valorará que la herramienta incorpore las operaciones aritméticas y las funciones propias de una calculadora científica (sin(),cos(),log(),exp(),…), aplicadas a números tanto enteros como reales en notación científica.
+
+La herramienta puede realizarse con una etapa de análisis léxico y una etapa de análisis sintáctico, haciendo uso de herramientas como flex y bison. Al análisis sintáctico es necesario añadirle aquellas acciones semánticas que permitan realizar las operaciones descritas. Como no vamos a sintetizar código ejecutable, podemos utilizar una tabla de símbolos para almacenar las variables que aparecen en el fichero de entrada, y los valores que toman a lo largo del cálculo.
+
+
+INDICACIONES AUXILIARES
+
+- Solo se piden operaciones escalares pero: Interesante mínimo/etc de un conjunto de números
+- Poder ejecutar funciones matemáticas típicas
+- Añadir un comando de ayuda
+- Poder abrir archivos con código
+- Para poder ampliar el compilador, en el análisis léxico no reconocer "sen", "cos", etc como tal, sino ir a la tabla de símbolos y que allí esté especificado si es una función del lenguaje.
+- Añadir a la tabla de símbolos constantes.
+- No meter en el anáisis sintáctico las sentencias per se (seno, cos, etc...), sino usar librerías.
+- Miramos en la tabla de símbolos si una función existe, y vamos a la librería correspondiente.
+- La consola de comandos debería trabajar con funciones de librería y permitir incorporar librerías.
+- Decidir si terminar los comandos con ';'. Matlab hace echo a pantalla si no terminas con ';', y hace echo si no.
+- Usar tabla de símbolos como memoria. "a = 3;". El analizador inserta 'a' en la TS como identificador. El sintáctico reconoce que eso es una asignación bien formada. Como no hacemos generación de código objeto, podemos meter ese '3' en la TS junto a la 'a'. Es decir usar la TB para almacenar los valores. "Memoria".
+- Añadir función para imprimir el estado de la memoria (solo variables).
+- Comprender cómo funciona un generador de analizadores sintácticos.
+- Saber qué le hace falta a un analizador sintáctico.
+- Su consejo: usar siempre float y olvidarse de los tipos.
+
+
+GESTION DE ERRORES
+- Dos ficheros de especificación: flex (léxico), bison (sintáctico y semántico).
+- Cuidado al compilar -> flex compilado puede decir que la gramática no es correcta. => Error GORDO.
+- Manejar errores de usuario: putos usuarios me cago en Dios. Bison tiene gestión de errores -> saber manejar algunos de los básicos.
+- Paréntesis desemparejados.
+- Sentencias mal formadas.
+- Indeterminaciones (división por 0).
+- Variables no inicializadas.

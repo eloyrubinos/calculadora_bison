@@ -1,0 +1,94 @@
+
+*************
+INTRODUCCIÓN
+*************
+Esta calculadora permite realizar operaciones matemáticas básicas, ejecutar funciones simples y declarar variables.
+NO permite declarar vectores, matrices u otras estructuras de datos complejas, ni permite definir funciones.
+
+La ejecución normal se realiza mediante consola de comandos, esperando las instrucciones del usuario, pero también permite cargar archivos con instrucciones.
+
+Continúa leyendo para más detalles.
+
+
+***********
+ARGUMENTOS
+***********
+-h	Imprime esta ayuda.
+ruta	Ejecuta el contenido del archivo. Ej: ./calculadora prueba
+
+
+***************
+PALABRAS CLAVE
+***************
+"salir" 	- Termina la ejecución del programa.
+"verEstado"	- Muestra las variables y sus valores (espacio de trabajo).
+"verTabla"	- Muestra toda la "tabla de símbolos": variables, constantes y funciones.
+"verAyuda"	- Muestra esta ayuda.
+"leer"		- Seguido de una ruta, lee un archivo para ejecutar su contenido. Ej: leer prueba
+
+
+************
+OPERACIONES
+************
+Asignación		=
+Suma			+
+Resta			-
+Multiplicación		*
+División		/
+Módulo			%
+Potencia		^	-> En realidad esta operación llama a una función, pero se incluye aquí por usarse como un operador.
+
+Suma + asignación	+=
+Resta + asignación	-=
+Mult. + asignación	*=
+Div. + asignación	/=
+
+
+**************
+COMPARACIONES
+**************
+Mayor que   >
+Menor que   <
+
+
+**********
+VARIABLES
+**********
+Aceptan nombres formados por caracteres alfanuméricos y '_' con la excepción de que no pueden empezar por número.
+No hay límite en la longitud del nombre, ni límite en la cantidad de variables que se pueden instanciar.
+
+
+***********
+CONSTANTES
+***********
+La calculadora no permite declarar constantes.
+Dispone de las siguientes:
+	- pi = 3.14159265359
+	- e = 2.71828182846
+
+
+**********
+FUNCIONES
+**********
+La calculadora no permite definir funciones.
+Dispone de las siguientes:
+	- sin() 	- Calcula el seno en radianes.
+	- cos() 	- Calcula el coseno en radianes.
+	- tan() 	- Calcula la tangente en radianes.
+	- asin()	- Calcula el arcoseno en radianes.
+	- acos()	- Calcula el arcocoseno en radianes.
+	- atan()	- Calcula la arcotangente en radianes
+	- sinh()	- Calcula el seno hiperbólico en radianes.
+	- cosh()	- Calcula el coseno hiperbólico en radianes.
+	- tanh()	- Calcula la tangente hiperbólica en radianes.
+	- log10()	- Logaritmo en base 10.
+	- ln()		- Logaritmo neperiano.
+	- exp()		- Eleva "e" al exponente que se pasa como argumento.
+	- sqrt()	- Calcula la raíz cuadrada.
+	- ceil()	- Devuelve un entero redondeado a la alza.
+	- floor()	- Devuelve un entero redondeado a la baja.
+	- fabs()	- Devuelve el valor absoluto.
+	- pow( , )	- Potencia del primer argumento por el segundo.
+	- fmod( , )	- Módulo del primer argumento por el segundo.
+
+
